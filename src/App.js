@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <TodoItem description='hello'/>
+       <TodoItem description='hello' completed={true}/>
 
        <TodoItem description='there'/>
 
