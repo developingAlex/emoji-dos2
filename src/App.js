@@ -14,6 +14,28 @@ class App extends Component {
     ]
   }
 
+  filterCompletedItems = (items) => {
+    const beforeItems = items
+    let afterItems = []
+    beforeItems.forEach((item) => {
+      if (item.completed){
+        afterItems.push(item)
+      }
+    })
+    return afterItems    
+  }
+
+  filterIncompletedItems = (items) => {
+    const beforeItems = items
+    let afterItems = []
+    beforeItems.forEach((item) => {
+      if (!item.completed){
+        afterItems.push(item)
+      }
+    })
+    return afterItems
+  }
+      
   onToggleItem = (index) => { //to handle what happens when the user clicks a checkbox
     this.setState((prevState) => { //this .setState call results in the Render method below being called again.
       //get current items
@@ -55,7 +77,8 @@ class App extends Component {
   }
 
   render() {
-    const items = this.state.items
+    // const items = this.state.items
+    const items = this.filterCompletedItems(this.state.items).concat(this.filterIncompletedItems(this.state.items))
     const total = items.length
     let totalCompleted = 0
     items.forEach((item) => {
