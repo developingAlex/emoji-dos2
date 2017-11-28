@@ -1,3 +1,9 @@
+# Alex notes:
+
+1. A lot of new material covered this class, see the commits for step by step changes made in class
+
+# default react README content:
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
