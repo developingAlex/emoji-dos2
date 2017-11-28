@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   onToggleItem = (index) => { //to handle what happens when the user clicks a checkbox
-    this.setState((prevState) => {
+    this.setState((prevState) => { //this .setState call results in the Render method below being called again.
       //get current items
       const beforeItems = prevState.items //this is the data we wish to change
       const afterItems = beforeItems.map((item, currentIndex) => {
