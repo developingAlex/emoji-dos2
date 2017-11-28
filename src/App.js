@@ -78,7 +78,7 @@ class App extends Component {
 
   render() {
     // const items = this.state.items
-    const items = this.filterCompletedItems(this.state.items).concat(this.filterIncompletedItems(this.state.items))
+    const items = this.state.items
     const total = items.length
     let totalCompleted = 0
     items.forEach((item) => {
@@ -97,20 +97,46 @@ class App extends Component {
         </dl>
 
         {
-          items.map((item, index) => (
-            <TodoItem
-              key={ index }
-              description={ item.description }
-              completed = { item.completed }
-              buttonType = { item.buttonType }
-              onToggleCompleted={
-                () => {
-                  console.log('TodoItem onToggleCompleted received', index)
-                  this.onToggleItem(index)
+          items.map((item, index) => {
+            if (item.completed){
+              return null
+            }
+            else{
+              return <TodoItem
+                key={ index }
+                description={ item.description }
+                completed = { item.completed }
+                buttonType = { item.buttonType }
+                onToggleCompleted={
+                  () => {
+                    console.log('TodoItem onToggleCompleted received', index)
+                    this.onToggleItem(index)
+                  }
                 }
-              }
-            />
-          ))
+              />
+            }
+          })
+        }
+        {
+          items.map((item, index) => {
+            if (!item.completed){
+              return null
+            }
+            else{
+              return <TodoItem
+                key={ index }
+                description={ item.description }
+                completed = { item.completed }
+                buttonType = { item.buttonType }
+                onToggleCompleted={
+                  () => {
+                    console.log('TodoItem onToggleCompleted received', index)
+                    this.onToggleItem(index)
+                  }
+                }
+              />
+            }
+          })
         }
       </div>
     );
