@@ -8,7 +8,13 @@ function TodoItem({
     <label>
       <input 
         type='checkbox' 
-        checked={ completed } />
+        checked={ completed }
+        onChange={
+          (event) => {
+            console.log('Toggled', description)
+          }
+        } 
+      />
        { description }
     </label>
   )
