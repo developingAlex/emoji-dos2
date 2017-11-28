@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import TodoItem from './components/TodoItem';
+import TodoItemsStatus from './components/TodoItemsStatus';
 import './App.css';
  
 
@@ -120,7 +121,11 @@ class App extends Component {
           <dt> Completed </dt>
           <dd> {totalCompleted }</dd>
         </dl>
-
+        
+        <TodoItemsStatus 
+          items = { items }
+        />
+       
         {
           items.map((item, index) => {
             if (item.completed){
