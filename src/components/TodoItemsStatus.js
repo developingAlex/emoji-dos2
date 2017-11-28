@@ -1,5 +1,22 @@
 import React from 'react'
 
+function AppropriateEmoji(tasksTodo){
+  let emoji = '🤯'
+  if (tasksTodo === 0){
+    emoji = '👏🎉👯🌞'
+  }
+  else if (tasksTodo === 1){
+    emoji = '🖕'
+  }
+  else if (tasksTodo === 2){
+    emoji = '✌'
+  }
+  else if (tasksTodo === 3){
+    emoji = '🤟'
+  }
+  return emoji
+}
+
 function TodoItemsStatus(props){
   const items = props.items
   const total = items.length
@@ -27,7 +44,7 @@ function TodoItemsStatus(props){
 
   return (
     <div>
-      { message }
+      { message + AppropriateEmoji(todoStill)}
     </div>
   )
 }
