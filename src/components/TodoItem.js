@@ -2,7 +2,8 @@ import React from 'react'
 
 function TodoItem({
   description,
-  completed = false //if not provided the default will be false
+  completed = false, //if not provided the default will be false
+  onToggleCompleted
 }) {
   return (
     <label>
@@ -11,7 +12,8 @@ function TodoItem({
         checked={ completed }
         onChange={
           (event) => {
-            console.log('Toggled', description)
+            console.log('Clicked Checbox', description)
+            onToggleCompleted()
           }
         } 
       />

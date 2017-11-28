@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     const items = this.state.items
-    
+
     return (
       <div className="App">
         {
@@ -25,6 +25,11 @@ class App extends Component {
               key={ index }
               description={ item.description }
               completed = { item.completed }
+              onToggleCompleted={
+                () => {
+                  console.log('TodoItem onToggleCompleted received', index)
+                }
+              }
             />
           ))
         }
