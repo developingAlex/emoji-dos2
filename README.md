@@ -1,6 +1,23 @@
 # Alex notes:
 
-1. A lot of new material covered this class, see the commits for step by step changes made in class
+1. A lot of new material covered this class, see the [commits](https://github.com/developingAlex/emoji-dos2/commits/master) for step by step changes made in class
+1. My solutions to the challenges begin at commit: [63bb7e91ff280a1e410b7c4ae179bb559c60a7b0 - "Add buttonType option to TodoItem"](https://github.com/developingAlex/emoji-dos2/commit/63bb7e91ff280a1e410b7c4ae179bb559c60a7b0)
+1. Challenges that were set:
+    1. Change Todo Item checkbox to instead use emoji icons for tick and cross inside a &lt;button&gt;
+    1. Split the todo items into two groups: completed and incompleted
+        * __Hint:__ first create two functions `filterCompletedItems` and `filterIncompletedItems`, then use them in the `render()` method
+        * __Hint:__ however, does this track our item indexes correctly?
+        * __Hint:__ use `.map` twice instead, and skip unwanted items by substituting them with `null`
+    1. Make todo item description editable
+        * __Hint:__ create a `onChangeItemDescriptionAtIndex(index, description)` method in your `App`
+        * __Hint:__ the `onChange` prop of a `<input>` will be called as a function with passed `event`. You can get the description using `event.target.value`
+    1. Add a `TodoItemsStatus` component that shows the total number of items, and displays how many are incomplete
+    1. Add emoji to `TodoItemsStatus`, that displays a different emoji based on the count incomplete. e.g.
+        - 0: 👏🎉👯🌞
+        - 1: 🖕
+        - 2: ✌
+        - 3: 🤟
+        - greater than 3: 🤯
 
 # default react README content:
 
