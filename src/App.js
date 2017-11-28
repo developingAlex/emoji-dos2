@@ -36,8 +36,29 @@ class App extends Component {
     return afterItems
   }
       
-  onChangeItemDescriptionAtIndex = (index, description) => {
+  onChangeItemDescriptionAtIndex = (index, newDescription) => {
+    this.setState((prevState) => {
 
+      const originalItems = prevState.items
+
+      const newItems = originalItems.map((item, currentIndex) => {
+        if(currentIndex === index){  
+          const copy = {
+            ...item, 
+            description: newDescription
+          }
+          return copy
+        }
+        else{ //return what it was
+          return item
+        }
+      })
+
+      return {
+        items: newItems
+      }
+
+    })
   }
 
   onToggleItem = (index) => { //to handle what happens when the user clicks a checkbox
@@ -111,6 +132,11 @@ class App extends Component {
                 description={ item.description }
                 completed = { item.completed }
                 buttonType = { item.buttonType }
+                onChangeDescription={
+                  (newDescription) => {
+                    this.onChangeItemDescriptionAtIndex(index, newDescription)
+                  }
+                }
                 onToggleCompleted={
                   () => {
                     console.log('TodoItem onToggleCompleted received', index)
@@ -132,6 +158,11 @@ class App extends Component {
                 description={ item.description }
                 completed = { item.completed }
                 buttonType = { item.buttonType }
+                onChangeDescription={
+                  (newDescription) => {
+                    this.onChangeItemDescriptionAtIndex(index, newDescription)
+                  }
+                }
                 onToggleCompleted={
                   () => {
                     console.log('TodoItem onToggleCompleted received', index)

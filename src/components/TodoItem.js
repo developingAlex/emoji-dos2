@@ -15,7 +15,16 @@ function TodoItem({
         <button type='button' onClick={(event)=>{onToggleCompleted()}} >
           { buttonEmoji }
         </button>
-        { description }
+        <input
+          type='text'
+          value = {description}
+          name= 'description'
+          onChange={
+            (event) => {
+              onChangeDescription(event.target.value)
+            }
+          }
+          />
       </label>
     )
   }
@@ -39,7 +48,7 @@ function TodoItem({
           name= 'description'
           onChange={
             (event) => {
-              onChangeDescription()
+              onChangeDescription(event.target.value)
             }
           }
           />
