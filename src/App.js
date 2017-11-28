@@ -14,8 +14,9 @@ class App extends Component {
     return (
       <div className="App">
         {
-          items.map((item) => (
+          items.map((item, index) => (
             <TodoItem
+              key={ index }
               description={ item.description }
               completed = { item.completed }
             />
