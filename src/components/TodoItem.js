@@ -6,7 +6,9 @@ function TodoItem({
 }) {
   return (
     <label>
-      <input type='checkbox' defaultChecked={ completed } />
+      <input 
+        type='checkbox' 
+        checked={ completed } />
        { description }
     </label>
   )
