@@ -7,11 +7,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <TodoItem />
+       <TodoItem description='hello'/>
 
-       <TodoItem />
+       <TodoItem description='there'/>
 
-       <TodoItem />
+       <TodoItem description='alex'/>
       </div>
     );
   }
