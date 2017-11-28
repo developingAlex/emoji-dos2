@@ -4,6 +4,7 @@ function TodoItem({
   description,
   completed = false, //if not provided the default will be false
   onToggleCompleted,
+  onChangeDescription,
   buttonType = false
 }) {
   if (buttonType){
@@ -21,7 +22,7 @@ function TodoItem({
   else{
 
     return (
-      <label>
+      <div>
         <input 
           type='checkbox' 
           checked={ completed }
@@ -32,8 +33,17 @@ function TodoItem({
             }
           } 
           />
-        { description }
-      </label>
+        <input
+          type='text'
+          value = {description}
+          name= 'description'
+          onChange={
+            (event) => {
+              onChangeDescription()
+            }
+          }
+          />
+      </div>
     )
   }
 }

@@ -9,8 +9,8 @@ class App extends Component {
     items: [
       {description: 'First', completed: true, buttonType: true },
       {description: 'Second', completed: true, buttonType: true },
-      {description: 'Third', completed: false, buttonType: true },
-      {description: 'Fourth', completed: true, buttonType: true }
+      {description: 'Third', completed: false, buttonType: false },
+      {description: 'Fourth', completed: true, buttonType: false }
     ]
   }
 
@@ -36,6 +36,10 @@ class App extends Component {
     return afterItems
   }
       
+  onChangeItemDescriptionAtIndex = (index, description) => {
+
+  }
+
   onToggleItem = (index) => { //to handle what happens when the user clicks a checkbox
     this.setState((prevState) => { //this .setState call results in the Render method below being called again.
       //get current items
