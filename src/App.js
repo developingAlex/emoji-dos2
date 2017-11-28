@@ -56,9 +56,23 @@ class App extends Component {
 
   render() {
     const items = this.state.items
+    const total = items.length
+    let totalCompleted = 0
+    items.forEach((item) => {
+      if (item.completed) {
+        totalCompleted += 1
+      }
+    })
 
     return (
       <div className="App">
+        <dl>
+          <dt> Total </dt>
+          <dd>{ total }</dd>
+          <dt> Completed </dt>
+          <dd> {totalCompleted }</dd>
+        </dl>
+
         {
           items.map((item, index) => (
             <TodoItem
