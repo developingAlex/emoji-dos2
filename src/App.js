@@ -14,6 +14,20 @@ class App extends Component {
     ]
   }
 
+  onToggleItem = (index) => { //to handle what happens when the user clicks a checkbox
+    this.setState((prevState) => {
+      //get current items
+      const alteredItems = prevState.items //this is the data we wish to change
+      //find the appropriate item by the index
+      const item = alteredItems[index]
+      item.completed = !item.completed
+
+      return { //return the changes we recorded
+        items: alteredItems
+      }
+    })
+  }
+
   render() {
     const items = this.state.items
 
@@ -28,6 +42,7 @@ class App extends Component {
               onToggleCompleted={
                 () => {
                   console.log('TodoItem onToggleCompleted received', index)
+                  this.onToggleItem(index)
                 }
               }
             />
