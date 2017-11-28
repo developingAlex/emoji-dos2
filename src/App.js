@@ -7,10 +7,10 @@ import './App.css';
 class App extends Component {
   state = {
     items: [
-      {description: 'First', completed: true },
-      {description: 'Second', completed: true },
-      {description: 'Third', completed: false },
-      {description: 'Fourth', completed: true }
+      {description: 'First', completed: true, buttonType: true },
+      {description: 'Second', completed: true, buttonType: true },
+      {description: 'Third', completed: false, buttonType: true },
+      {description: 'Fourth', completed: true, buttonType: true }
     ]
   }
 
@@ -79,6 +79,7 @@ class App extends Component {
               key={ index }
               description={ item.description }
               completed = { item.completed }
+              buttonType = { item.buttonType }
               onToggleCompleted={
                 () => {
                   console.log('TodoItem onToggleCompleted received', index)
