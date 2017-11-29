@@ -1,5 +1,14 @@
 import React from 'react'
 
+// function TodoItem (props) {
+//   completed = props.completed
+//   if completed === null / undefined, then completed = false
+// }
+
+//the above is an example (kind of) of what we'd have to do the long way
+// if not for the sugar syntax below (for description, completed, onToggleCompleted...)
+
+
 function TodoItem({
   description,
   completed = false, //if not provided the default will be false
