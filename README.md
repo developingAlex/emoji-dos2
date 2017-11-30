@@ -1,4 +1,5 @@
 20171128
+
 previous class exercise:[react-bootstrap-components](https://github.com/developingAlex/react-bootstrap-components)
 # Alex notes:
 
