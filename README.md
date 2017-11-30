@@ -1,3 +1,4 @@
+previous class exercise:[react-bootstrap-components](https://github.com/developingAlex/react-bootstrap-components)
 # Alex notes:
 
 1. A lot of new material covered this class, see the [commits](https://github.com/developingAlex/emoji-dos2/commits/master) for step by step changes made in class
